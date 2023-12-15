@@ -81,7 +81,6 @@ button {
   overflow: hidden;
   border-radius: 4px;
   width: 80%;
-  height: 80%;
   background-color: #000;
   -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
           box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
@@ -157,22 +156,25 @@ button {
   position: absolute;
   right: 0;
 }
-.modal__col {
-  width: 90%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  left: 0;
-  gap: 10px;
+.modal__row {
+  width: 100%;
 }
-.modal__column {
-  padding: 7px;
+.modal__col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-gap: 4px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
 }
 .modal__image {
-  border: 2px solid green;
+  position: relative;
   opacity: 0.8;
-  width: 156px;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -webkit-transition: -webkit-transform var(--animation-duration) var(--timing-function);
@@ -183,11 +185,11 @@ button {
 }
 
 .modal-img {
-  width: 80%;
-  height: 80%;
+  width: 70%;
 }
 
 .test {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

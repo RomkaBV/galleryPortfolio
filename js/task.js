@@ -30,7 +30,7 @@ function onAddGalleryModal(galleryItems) {
     .map(({ preview, original, description }) => {
       return `
         <div    data-sourse="${original}">
-                <img class="modal__image" src="${preview}" data-sourse="${original}" alt="${description}" width="156px" height="156px">
+                <img class="modal__image" src="${preview}" data-sourse="${original}" alt="${description}" >
 </div>`;
     })
     .join("");
@@ -253,3 +253,11 @@ function onButtonPrevClick(evt) {
   count += 256;
   sliderCartLine.style.left = `${count}px`;
 }
+
+function dog() {
+  print("I am a dod.");
+}
+
+
+
+dog();
