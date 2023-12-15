@@ -1,0 +1,223 @@
+:root {
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-duration: 250ms;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: green;
+  margin: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
+  color: #212121;
+  line-height: 1.5;
+}
+body.show-modal .container__backdrop {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+  background-color: #000;
+}
+body.show-modal .container__modal {
+  transform: scale(1);
+}
+button {
+  cursor: pointer;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 25px;
+  border-radius: 50%;
+}
+.wrapper {
+}
+.container {
+  // .container__backdrop
+
+  &__backdrop {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 999;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+  }
+}
+.conteiner {
+  // .conteiner__section
+
+  &__section {
+  }
+
+  // .conteiner__modal
+
+  &__modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 4px;
+    width: 80%;
+    height: 80%;
+    background-color: #000;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+      0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    transform: scale(1.1);
+    transition: transform 200ms ease-in-out;
+  }
+}
+.section {
+  // .section__gallery
+
+  &__gallery {
+    display: grid;
+    max-width: 100%;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(320px, 1fr)
+    ); //  Повторюємо колонки  з мінімальним розміром колонки 320px(ШИРИНА),
+    // а максимальний розмір розтягне по всій ширині вікна браузера (1fr)(Розтягує на ширину вікна браузера не залишає по бокам отступи),
+    grid-auto-rows: 240px; // висота рядка
+    grid-gap: 12px; // відступ між ж картинками
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+
+    &__item {
+      position: relative;
+      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+        0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    }
+
+    &__link {
+      display: block;
+      text-decoration: none;
+      height: 100%;
+    }
+
+    &__link:hover {
+      cursor: zoom-in;
+    }
+
+    &__image {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      transition: transform var(--animation-duration) var(--timing-function);
+    }
+
+    &__image:hover {
+      transform: scale(1.03);
+    }
+  }
+}
+.js-backdrop {
+}
+.modal {
+  // .modal__button
+
+  &__button {
+    &__close {
+      border: 1px solid white;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+    &__close:hover,
+    &__close:active,
+    &__next:hover,
+    &__prev:hover {
+      border: 1px solid grey;
+      transform: scale(1.03);
+    }
+    &__next {
+      border: 1px solid white;
+      position: absolute;
+      left: 0;
+    }
+    &__prev {
+      border: 1px solid white;
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  // .modal__row
+
+  // &__row:after {
+  //   content: "";
+  //   display: table;
+  //   clear: both;
+  // }
+  &__row {
+  }
+
+  // .modal__col
+
+  &__col {
+    width: 90%;
+    display: flex;
+    position: relative;
+    left: 0;
+    gap: 10px;
+
+    // display: grid;
+    // max-width: 100%;
+    // grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+    // grid-gap: 12px;
+    // list-style: none;
+  }
+
+  // .modal__column
+
+  &__column {
+    // list-style: none;
+    //float: left;
+    //width: 100%;
+    // width: 16.66%;
+    padding: 7px;
+  }
+
+  // .modal__image
+
+  &__image {
+    border: 2px solid green;
+    opacity: 0.8;
+    width: 156px;
+    object-fit: cover;
+    transition: transform var(--animation-duration) var(--timing-function);
+    opacity: 0.4;
+  }
+}
+
+.modal-img {
+  width: 80%;
+  height: 80%;
+}
+
+.test {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+}
+.test2 {
+  opacity: 1;
+}
