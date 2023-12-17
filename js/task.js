@@ -236,28 +236,4 @@ function modalClickImg(e) {
 //   .querySelector(".button__prev")
 //   .addEventListener("click", onButtonPrevClick);
 
-function onButtonNextClick(evt) {
-  // console.log(count);
-
-  if (count === -1280) {
-    count = 256;
-  }
-  count -= 256;
-  sliderCartLine.style.left = `${count}px`;
-}
-function onButtonPrevClick(evt) {
-  // console.log(count);
-  if (count === 0) {
-    count = -1536;
-  }
-  count += 256;
-  sliderCartLine.style.left = `${count}px`;
-}
-
-function dog() {
-  print("I am a dod.");
-}
-
-
-
-dog();
+//  
